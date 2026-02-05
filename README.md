@@ -1,2 +1,4 @@
 # data-engineering-learning
-Learning Data Engineering In public
+
+This repository contains my Data Engineering learning journey.  
+I share notes, practice files, and projects here.
