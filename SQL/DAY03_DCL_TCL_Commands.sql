@@ -8,7 +8,7 @@ DDL - CREATE, ALTER, DROP, TRUNCATE
 DML - INSERT, UPDATE, DELETE
 DQL - SELECT
 DCL - GRANT, REVOKE
-TCL - COMMIT, ROLLBACK, SAVEPOINT
+TCL - COMMIT, ROLLBACK,
 */
 
 -- ============================================================================
