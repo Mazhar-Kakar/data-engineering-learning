@@ -1,4 +1,4 @@
--- Day02 SQL
+-- Day02 SQL : sql commands, create, Insert in detail, delete, truncate etc
 -- ===========================================================================================================
 -- Types of SQL commands?
 /*
