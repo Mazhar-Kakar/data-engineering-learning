@@ -1,127 +1,139 @@
--- Day01SQL
--- ===============================================
+-- Day01 SQL
+-- =====================================================
+
 /*
 => Database:
-	Database is a collection of Tables. it is organized form of Data stored  
-   Electronically in The Computer System.
-   
-=> Table: 
-	A entity that holds data in the form of Rows and Columns.
-     
-=> 2 Kinde of Datababes: 
--- Relational dbs (tables have relation between theme)
--- mysql
--- sql server
--- prostresql
--- sql lite 
--- maria db
+   A database is a collection of tables.
+   It is an organized form of data stored electronically.
 
--- NoSQL databases
--- hbase
--- mongodb
--- dynamodb
+=> Table:
+   An entity that stores data in the form of rows and columns.
+
+=> Types of Databases:
+
+-- Relational Databases (RDBMS)
+   MySQL
+   SQL Server
+   PostgreSQL
+   SQLite
+   MariaDB
+
+-- NoSQL Databases
+   MongoDB
+   HBase
+   DynamoDB
 */
--- ===========================================================================
 
--- show databases 
-show databases;
+-- =======================================================================================================
+
+-- Show all databases
+SHOW DATABASES;
 
 -- Create a new database
-create database retail_db;
+CREATE DATABASE retail_db;
 
--- which database is connected
-select database();
+-- Check which database is currently selected
+SELECT DATABASE();
 
--- connect to the database
-use retail_db;
+-- Connect to the database
+USE retail_db;
 
--- Create a new table inside the connected db
-CREATE TABLE orders(
-order_id int,
-order_date datetime,
-customer_id int,
-order_status varchar(30)
+-- =====================================================
+
+-- Create a new table
+CREATE TABLE orders (
+    order_id INT,
+    order_date DATETIME,
+    customer_id INT,
+    order_status VARCHAR(30)
 );
 
--- show existing tables inside the db which a we are using
-show tables;
+-- Show tables inside current database
+SHOW TABLES;
 
--- Retrieve all data from the orders table
+-- Retrieve all data from orders table
 SELECT * FROM orders;
 
--- Insert data/Records into tables
-INSERT INTO orders VALUES (1,'2013-07-25 00:00:00.0',11599,'COMPLETED');
-INSERT INTO orders VALUES (2,'2013-07-25',256,'PNEDING_PAYEMENT');
+-- Insert records into orders table
+INSERT INTO orders VALUES
+(1, '2013-07-25 00:00:00', 11599, 'COMPLETED'),
+(2, '2013-07-25', 256, 'PENDING_PAYMENT');
 
--- drop table inside the db which we are connected
-drop table orders;
+-- Drop table from connected database
+DROP TABLE orders;
 
--- switch to another db then use this command to drop database
-drop database retail_db;
+-- Switch to another database before dropping retail_db
+USE mysql;
 
+DROP DATABASE retail_db;
 
+-- =====================================================
 /*
-ASSIGMENT:
-CREAT A TABLE customers AND INSERT 5 RECORDS
-CREAT A TABLE orders_items AND INSERT 5 RECORDS
+ASSIGNMENT:
+1) Create table customers and insert 5 records
+2) Create table order_items and insert 5 records
 */
 
-CREATE TABLE customers(
-customer_id int,
-customer_fname varchar(30),
-customer_lname varchar(30),
-customer_email varchar(30),
-cusotmer_phone varchar(30),
-customer_address varchar(60),
-city varchar(30),
-state varchar(30),
-pincode varchar(30)
+-- =====================================================
+
+CREATE TABLE customers (
+    customer_id INT,
+    customer_fname VARCHAR(30),
+    customer_lname VARCHAR(30),
+    customer_email VARCHAR(30),
+    customer_phone VARCHAR(30),
+    customer_address VARCHAR(60),
+    city VARCHAR(30),
+    state VARCHAR(30),
+    pincode VARCHAR(30)
 );
 
 -- Insert data into customers table
-INSERT INTO customers
-(customer_id, customer_fname, customer_lname, customer_email, customer_phone,
- customer_address, city, state, pincode)
-VALUES
-(1,'Richard','Harnandez','richard123@gmail.com','+919960488612','bharat nagar pachora','pachora','maharashtra','424207'),
-(2,'harmony','kaza','harmony3@gmail.com','+919978763465','ali nagar bhadgaon','bhadgaon','maharashtra','424207'),
-(3,'salam','majid','salam@gmail.com','+918765563765','kashi peth ratlam','ratlam','maharashtra','424207'),
-(4,'suriye','yadav','yadav@gmail.com','+919969355632','pune maharashtra','pune','maharashtra','424207'),
-(5,'hari','baba','hari3@gmail.com','+919987676523','bharat nagar pachora','jalna','maharashtra','424207');
+INSERT INTO customers VALUES
+(6,'Amit','Sharma','amit.sharma@gmail.com','+919812345678','nehru nagar','mumbai','maharashtra','400001'),
+(7,'Neha','Patel','neha.patel@gmail.com','+919834567890','sector 15','ahmedabad','gujarat','380015'),
+(8,'Rahul','Verma','rahul.verma@gmail.com','+919845612345','rajiv chowk','delhi','delhi','110001'),
+(9,'Priya','Singh','priya.singh@gmail.com','+919856789012','civil lines','jaipur','rajasthan','302006'),
+(10,'Karan','Mehta','karan.mehta@gmail.com','+919867890123','mg road','indore','madhya pradesh','452001');
 
+-- ================================================================================================================
 
-CREATE TABLE orders_items(
-order_item_id int,
-order_item_order_id int,
-product_id int,
-quntity int,
-total_amount int,
-price int
+CREATE TABLE order_items (
+    order_item_id INT,
+    order_item_order_id INT,
+    product_id INT,
+    quantity INT,
+    total_amount INT,
+    price INT
 );
 
--- Insert data into orders_items table
-INSERT INTO orders_items VALUES
+-- Insert data into order_items table
+INSERT INTO order_items VALUES
 (1,134,11599,5,2000,400),
 (2,125,1176,5,1000,200),
 (3,178,1152,5,500,100),
 (4,134,1123,5,2000,400),
 (5,1112,1187,5,2000,400);
 
+-- =====================================================
+
 /*
-creating a database
-creating a tables
-commenting #, --, /**\/
-inserting data into tables 
-dataTypes (int,varchar,datatime,date,float)
+WHAT COVERED:
 
-schema - logical folder inside db
+- Creating a database
+- Creating tables
+- SQL comments (#, --, /* *\/)
+- Inserting data into tables
+- Data types: INT, VARCHAR, DATETIME, DATE, FLOAT
 
-databse -> schema -> tables
-reatail_db -> dev / test / prod -> orders
+Schema Concept:
+Database -> Schema -> Tables
 
-In mysql
-databse --> tables
+Example:
+retail_db -> dev / test / prod -> orders
+
+In MySQL:
+Database -> Tables
 retail_db -> orders
 */
-
 
