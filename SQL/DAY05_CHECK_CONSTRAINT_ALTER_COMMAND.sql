@@ -62,7 +62,7 @@ PENDING
 -- Invalid value gets inserted because no constraint exists
 INSERT INTO orders VALUES
 (1,101,'2025-01-01',10,'CLOSE',501,2,19.99,39.98);
-
+select * from orders;
 -- ============================================================
 -- Add CHECK Constraint using ALTER TABLE
 -- ============================================================
@@ -79,6 +79,16 @@ ADD CHECK (
         'PENDING'
     )
 );
+
+/*
+20:55:41	ALTER TABLE orders ADD CHECK (order_status IN ('CLOSED'PENDING_PAYMENT'COMPLETE'PROCESSING'ON_HOLD',         'SUSPECTED_FRAUD',         'PENDING'     ) )	
+Error Code: 3819. Check constraint 'orders_chk_1' is violated.	0.013 sec
+*/
+
+-- Before adding a CHECK constraint,
+-- make sure existing data does NOT contain invalid values.
+-- If mismatched values exist, the ALTER TABLE command will fail.
+-- So first UPDATE or DELETE incorrect records, then add the constraint.
 
 -- This will fail becouse of check constraint
 INSERT INTO orders VALUES
@@ -224,7 +234,7 @@ CREATE TABLE users (
     user_id INT PRIMARY KEY,
     username VARCHAR(50),
     email VARCHAR(100),
-    CHECK (email LIKE '%@%.%')
+    CHECK (email LIKE '%@%.%') -- Pattern matching using the LIKE operator
 );
 
 -- Invalid email
