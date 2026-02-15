@@ -8,7 +8,7 @@ COUNT():
     - Used to count number of records (rows)
     - Can count all rows or rows based on a condition or column
 
-ORDER BY CLAUSE: 
+ORDER BY CLAUSE:  
 	- Used to sort the result of a query
     - ASC  = ascending order (small to large)  [default]
     - DESC = descending order (large to small)
