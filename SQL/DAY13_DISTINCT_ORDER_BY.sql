@@ -7,7 +7,7 @@ DISTINCT:
 	- Used to remove duplicate values from result
 	- Show only unique records
 	- Helpful when we want to know unique states, cities, departments, etc.
-	- Works on one column or multiple columns
+	- Works on one column or multiple columns	
 */
 
 -- =================================================================================
@@ -79,6 +79,9 @@ FROM employees_new;
 
 SELECT DISTINCT id, name, department, role 
 FROM employees_new;
+-- OR
+SELECT DISTINCT *
+FROM employees_new;
 
 DROP TABLES students, courses, enrollements; -- DROP MULTIPLE TABLES IN SINGLE COMMAND
 
@@ -88,10 +91,8 @@ CREATE TABLE students (
     student_id INT AUTO_INCREMENT PRIMARY KEY,
     student_fname VARCHAR(30) NOT NULL,
     student_lname VARCHAR(30) NOT NULL,
-    student_mname VARCHAR(30),
     student_email VARCHAR(30) NOT NULL,
     student_phone VARCHAR(15) NOT NULL,
-    student_alternate_phone VARCHAR(15),
     years_of_exp INT NOT NULL,
     student_company VARCHAR(30),
     batch_date DATE NOT NULL,
@@ -121,6 +122,8 @@ VALUES
 -- ===============================================================================
 -- STUDENTS TABLE (REAL WORLD DATA EXAMPLE)
 -- ===============================================================================
+
+SELECT * FROM students;
 
 -- Unique locations of students
 SELECT DISTINCT location 
@@ -181,7 +184,7 @@ LIMIT 5;
 -- This query may not work properly because
 -- ORDER BY column is not part of DISTINCT selection
 
-SELECT DISTINCT source_of_joining 
+SELECT DISTINCT source_of_joining
 FROM students 
 ORDER BY years_of_exp DESC 
 LIMIT 5;

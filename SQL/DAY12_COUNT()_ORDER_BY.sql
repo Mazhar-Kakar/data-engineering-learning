@@ -6,7 +6,10 @@
 COUNT():
 	- This is an aggregate function
     - Used to count number of records (rows)
-    - Can count all rows or rows based on a condition or column
+    - It can count all rows or rows based on a condition or column
+    - COUNT(column_name): it ignores NULL values and only counts rows where that specific column has data.
+	- COUNT(*): it does not ignore NULLs. It counts every row in the table, even if some or all columns in that row are NULL.
+	- COUNT(1): it works exactly like COUNT(*), counting all rows regardless of NULLs. 
 
 ORDER BY CLAUSE:  
 	- Used to sort the result of a query
@@ -150,5 +153,17 @@ AGGREGATION & SORTING:
 	- Sorting using multiple columns
 	- Using expressions and derived columns in ORDER BY
 */
+
+select *, salary + salary * 0.1 as revised_salry
+from employees order by revised_salry;
+
+/*
+FROM
+WHERE
+SELECT
+HAVING
+ORDER BY   
+*/
+
 
 

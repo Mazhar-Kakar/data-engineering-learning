@@ -194,12 +194,14 @@ WHERE email REGEXP '^........';
 
 -- ========================================================================================
 -- Find users where email name does not start with underscore (_) or dash (-)
+-- The caret (^) represents the start of a string when placed outside square brackets [ ], 
+-- but negates the condition when placed inside them.
 -- ========================================================================================
 SELECT * FROM users 
 WHERE email REGEXP '^[^_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$';  
 
 SELECT * FROM users 
-WHERE email REGEXP '^[^_\-+#]+@[a-z0-9_]+\.[a-z]{2,}$'; 
+WHERE email REGEXP '^[^_\+#-]+@[a-z0-9_]+\.[a-z]{2,}$'; 
 -- NOTE:
 -- dash (-) inside [] creates range if placed between characters.
 -- So always place dash at start or end or escape using \-
