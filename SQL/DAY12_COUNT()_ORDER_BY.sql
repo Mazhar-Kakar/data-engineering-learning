@@ -154,16 +154,4 @@ AGGREGATION & SORTING:
 	- Using expressions and derived columns in ORDER BY
 */
 
-select *, salary + salary * 0.1 as revised_salry
-from employees order by revised_salry;
-
-/*
-FROM
-WHERE
-SELECT
-HAVING
-ORDER BY   
-*/
-
-
 

@@ -8,10 +8,10 @@ There is an internal execution order.
 
 ACTUAL ORDER OF EXECUTION:
 
-FROM       → Load table data
-WHERE      → Filter rows
-SELECT     → Choose columns / create derived columns
-DISTINCT   → Remove duplicate rows
+FROM       → Load table data (*) 10000 rows / 20 columns
+WHERE      → Filter rows 2000 rows / 20 columns
+SELECT     → Choose columns / create derived columns 2000 / 4 columns
+DISTINCT   → Remove duplicate rows 
 ORDER BY   → Sort result
 LIMIT      → Restrict number of rows
 */
