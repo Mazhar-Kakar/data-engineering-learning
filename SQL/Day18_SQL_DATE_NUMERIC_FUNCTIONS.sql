@@ -101,16 +101,15 @@ FROM sales;
 -- ===============================================================================
 -- GROUP BY YEAR AND MONTH
 -- ===============================================================================
-SELECT CONCAT(YEAR(sale_date),'-',MONTH(sale_date)) AS year_month,
+SELECT CONCAT(YEAR(sale_date),'-',MONTH(sale_date)) AS yearmonth,
        SUM(amount) AS total_sales
 FROM sales
-GROUP BY year_month;
+GROUP BY yearmonth;
 
 -- SIMPLER APPROACH
-SELECT EXTRACT(YEAR_MONTH FROM sale_date) AS year_month,
-       SUM(amount) AS total_sales
+SELECT EXTRACT(YEAR_MONTH FROM sale_date) AS yearmonth, SUM(amount) AS total_sales
 FROM sales
-GROUP BY year_month;
+GROUP BY yearmonth;
 
 -- ===============================================================================
 -- WEEK FUNCTION
