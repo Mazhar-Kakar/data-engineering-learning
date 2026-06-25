@@ -1,0 +1,7 @@
+✅ Call API (requests)
+✅ Clean data (pandas)
+✅ Store in DB (sqlalchemy)
+✅ Hide secrets (dotenv)
+✅ Track logs (logging)
+✅ Automate (cron)
+✅ Orchestrate (airflow)

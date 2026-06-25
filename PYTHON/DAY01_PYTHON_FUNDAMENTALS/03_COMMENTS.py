@@ -1,5 +1,5 @@
 # ====================================================================================
-# Day 02 – PYTHON : PYTHON COMMENTS
+# Day 04 – PYTHON : PYTHON COMMENTS
 # ====================================================================================
 
 # ------------------------------------------------------------------------------------
@@ -34,9 +34,8 @@ Comments help in:
    - Used for longer explanations or documentation
 """
 
+# Example of multi-line comment
 """
-Example of multi-line comment
-
 This is a multi-line comment.
 It can span multiple lines.
 Used to explain larger sections of code.

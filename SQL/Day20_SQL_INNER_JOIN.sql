@@ -225,9 +225,8 @@ WHERE o.order_id = 1;
 -- SAME (JOIN = INNER JOIN by default)
 SELECT o.order_id, c.customer_id, CONCAT(c.customer_fname, " ", c.customer_lname) AS customer_name
 FROM orders o
-JOIN customers c
-ON o.customer_id = c.customer_id
-WHERE o.order_id = 1;
+INNER JOIN customers c
+ON o.customer_id = c.customer_id;
 
 -- count of matching records
 SELECT COUNT(*)
@@ -284,7 +283,7 @@ SELECT customer_id FROM orders) c;
 -- ============================================================
 -- WHAT WE COVERED
 -- ============================================================
-
+show databases;
 /*
 ✔ INNER JOIN
 ✔ How to retrieve related data using JOIN
@@ -292,3 +291,6 @@ SELECT customer_id FROM orders) c;
 ✔ Customer who never placed any order using EXCEPT
 ✔ Understanding ER model, relationships, and mapping between tables
 */
+
+
+show create table customers;
